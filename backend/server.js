@@ -5,6 +5,7 @@ import connectMongoDB from "./db/connectMongoDB.js";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js"
 import postRoutes from "./routes/postRoutes.js"
+import notificationRoutes from "./routes/notificationRoutes.js"
 import {v2 as cloudinary} from "cloudinary"
 
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({extended:true}));  // to parse form data from postma
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes)            // in this path this passes to Routes handler 
 app.use("/api/posts",postRoutes)
+app.use("/api/notifications",notificationRoutes)
 
 
 app.listen(8000, ()=>{

@@ -47,7 +47,15 @@ const userSchema = new mongoose.Schema({
     bio:{
         type:String,
         default:""
-    }
+    },
+    likedPosts:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Post",
+            default:[],
+            
+        }
+    ]
 },{timestamps:true})
     // exported for futher use
 const User = mongoose.model("User",userSchema);
